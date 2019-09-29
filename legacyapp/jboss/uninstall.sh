@@ -16,9 +16,10 @@
 
 kubectl delete -f jboss-controller.yaml -n jboss-controller
 kubectl delete namespace jboss-controller
-kubectl delete -f application.yaml 
-kubectl delete -f helloworld.yaml
-kubectl delete -f configmap.action.jboss-app.helloworld.yaml
+kubectl delete -f application.yaml -n legacyapp
+kubectl delete -f helloworld.yaml -n legacyapp
+kubectl delete -f configmap.action.jboss-app.helloworld.yaml -n legacyapp
+kubectl delete namespace legacyapp
 kubectl delete -f configmap.status-mapping.jboss-app.yaml -n kappnav 
 kubectl delete -f configmap.action.jboss-app.yaml -n kappnav 
 kubectl delete -f jboss-app-CRD.yaml 

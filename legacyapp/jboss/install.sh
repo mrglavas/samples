@@ -15,9 +15,10 @@
 ###############################################################################
 
 kubectl apply -f jboss-app-CRD.yaml 
-kubectl apply -f application.yaml 
-kubectl apply -f helloworld.yaml
-kubectl apply -f configmap.action.jboss-app.helloworld.yaml
+kubectl create namespace legacyapp
+kubectl apply -f application.yaml -n legacyapp
+kubectl apply -f helloworld.yaml -n legacyapp
+kubectl apply -f configmap.action.jboss-app.helloworld.yaml -n legacyapp
 kubectl apply -f configmap.status-mapping.jboss-app.yaml -n kappnav 
 kubectl apply -f configmap.action.jboss-app.yaml -n kappnav 
 kubectl create namespace jboss-controller

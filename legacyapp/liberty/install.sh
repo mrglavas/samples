@@ -15,9 +15,9 @@
 ###############################################################################
 
 kubectl apply -f liberty-sa-app-CRD.yaml 
-kubectl apply -f application.yaml
-kubectl apply -f webapp1.yaml
-kubectl apply -f webapp2.yaml
+kubectl create namespace legacyapp
+kubectl apply -f application.yaml -n legacyapp
+kubectl apply -f webapp1.yaml -n legacyapp
 kubectl apply -f configmap.action.liberty-sa-app.yaml -n kappnav
 kubectl apply -f configmap.status-mapping.liberty-sa-app.yaml -n kappnav
 kubectl create namespace liberty-controller

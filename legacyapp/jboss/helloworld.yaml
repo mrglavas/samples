@@ -27,3 +27,5 @@ metadata:
     app-port: "8080"
     server: "standalone"
     node: "<node name>"
+    kappnav.platform.kind: "VM"
+    kappnav.platform.name: "<host name>"
