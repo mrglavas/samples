@@ -13,11 +13,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ###############################################################################
+# syntax:  install.sh <hostname>
+# hostname cannot be localhost
+# hostname must be dot-qualified hostname - e.g. myhost.com
+hostname=$1
+
+if [ x$hostname == x ]; then
+	echo Must specify hostname
+	exit 1 
+fi
 
 kubectl apply -f liberty-sa-app-CRD.yaml 
 kubectl create namespace legacyapp
 kubectl apply -f application.yaml -n legacyapp
-kubectl apply -f webapp1.yaml -n legacyapp
+cat webapp1.yaml | sed "s|HOSTNAME|$hostname|" | kubectl apply -f - -n legacyapp
 kubectl apply -f configmap.action.liberty-sa-app.yaml -n kappnav
 kubectl apply -f configmap.status-mapping.liberty-sa-app.yaml -n kappnav
 kubectl create namespace liberty-controller

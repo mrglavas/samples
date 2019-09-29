@@ -13,11 +13,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ###############################################################################
+# syntax:  install.sh <hostname>
+# hostname cannot be localhost
+# hostname must be dot-qualified hostname - e.g. myhost.com
+hostname=$1
+
+if [ x$hostname == x ]; then
+	echo Must specify hostname
+	exit 1 
+fi
+
+nodename=$(echo $hostname | awk {'n=split($1,v,"."); print v[1]'})
 
 kubectl apply -f jboss-app-CRD.yaml 
 kubectl create namespace legacyapp
 kubectl apply -f application.yaml -n legacyapp
-kubectl apply -f helloworld.yaml -n legacyapp
+cat helloworld.yaml | sed "s|HOSTNAME|$hostname|" | sed "s|NODENAME|$nodename|" | kubectl apply -f - -n legacyapp
 kubectl apply -f configmap.action.jboss-app.helloworld.yaml -n legacyapp
 kubectl apply -f configmap.status-mapping.jboss-app.yaml -n kappnav 
 kubectl apply -f configmap.action.jboss-app.yaml -n kappnav 

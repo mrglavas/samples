@@ -22,7 +22,7 @@ metadata:
     app: "legacyapp"
   annotations:
     protocall: "http"
-    host: "<host name>"
+    host: "HOSTNAME"
     port: "9080"
     kappnav.platform.kind: "VM"
-    kappnav.platform.name: "<host name>"
+    kappnav.platform.name: "HOSTNAME"
