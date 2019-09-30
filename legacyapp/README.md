@@ -17,14 +17,22 @@ Our sample application, 'legacyapp', shows depicts an application comprised of o
 To install and explore the sample, perform the following steps: 
 
 1. pre-reqs 
-   1. [install kAppNav](https://github.com/kappnav/README)
-   1. [install WebSphere Liberty](https://developer.ibm.com/wasdev/downloads/#asset/runtimes-wlp-webProfile8) and create default server 
+   1. [install kAppNav](https://github.com/kappnav/README).
+   1. [install WebSphere Liberty](https://developer.ibm.com/wasdev/downloads/#asset/runtimes-wlp-webProfile8) and create default server.  
 
       Create and start default server with these steps: 
 
       1. $LIBERTY_HOME/bin/server create
       1. $LIBERTY_HOME/bin/server start 
 
-   1. [install JBoss EAP 7.2](https://developers.redhat.com/products/eap/download?sc_cid=701f2000000RmA9AAK&gclid=EAIaIQobChMIwaCv_6v35AIV0cDACh3ZUAIDEAAYASAAEgLzifD_BwE&gclsrc=aw.ds) and [install helloworld sample application](https://developers.redhat.com/products/eap/hello-world#fndtn-macos) 
+      Be sure to install the WebSphere Liberty server on a VM that is network accessible from the Kubernetes cluster running kAppNav. Note you can alternatively use [OpenLiberty](https://openliberty.io/). 
+
+   1. [install JBoss EAP 7.2](https://developers.redhat.com/products/eap/download?sc_cid=701f2000000RmA9AAK&gclid=EAIaIQobChMIwaCv_6v35AIV0cDACh3ZUAIDEAAYASAAEgLzifD_BwE&gclsrc=aw.ds) and [install helloworld sample application](https://developers.redhat.com/products/eap/hello-world#fndtn-macos).
+
+      Be sure to install the JBoss server on a VM that is network accessible from the Kubernetes cluster running kAppNav. Also be sure to use standalone server to run the helloworld sample. Start the standlone server using this command: 
+
+      $JBOSS_HOME/bin/standalone.sh 
+
+
 1. install Liberty Standalone App 
 1. install JBoss App
