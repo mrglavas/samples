@@ -29,7 +29,11 @@ To install and explore the sample, perform the following steps:
 
       Be sure to install the WebSphere Liberty server on a VM that is network accessible from the Kubernetes cluster running kAppNav. Note you can alternatively use [OpenLiberty](https://openliberty.io/). 
 
+      Note a Java JRE is required.  Install this separately. 
+
    1. [install JBoss EAP 7.2](https://developers.redhat.com/products/eap/download?sc_cid=701f2000000RmA9AAK&gclid=EAIaIQobChMIwaCv_6v35AIV0cDACh3ZUAIDEAAYASAAEgLzifD_BwE&gclsrc=aw.ds) and [install helloworld sample application](https://developers.redhat.com/products/eap/hello-world#fndtn-macos).
+
+      Note a Java JRE is required.  Install this separately.
 
       Be sure to install the JBoss server on a VM that is network accessible from the Kubernetes cluster running kAppNav. Also be sure to use standalone server to run the helloworld sample. Note you must tweak the JBOSS standalone server to listen on all interfaces in order to be accessible for this sample. Make the following change to $JBOSS_HOME/standalone/configuration/standalone.xml: 
 
@@ -94,5 +98,28 @@ If you stop the WebSphere Liberty and JBoss servers, kAppNav updates the status 
 
 ![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/stopped.jpg)
 
+# Selecting Actions 
+
+On the component view page, you can select pre-defined actions to perform in the context of the selected component: 
+
+## Liberty Standalone App Action - View Home Page 
+
+![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/liberty-action.jpg)
+
+![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/liberty-home.jpg)
+
+## JBoss App Actions 
+
+### View Application Config 
+
+![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/jboss-view-config.jpg)
+
+![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/jboss-config.jpg)
+
+### View Server Metrics 
+
+![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/jboss-view-metrics.jpg)
+
+![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/jboss-metrics.jpg)
 
 
