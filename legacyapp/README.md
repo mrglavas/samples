@@ -6,7 +6,7 @@ The sample in this repository demonstrates how you can represent and include leg
 
 # Overview 
 
-In this sample, we will assume a fictious application named 'legacyapp', comprised of two legacy components.  One component is a webapp running on a standalone WebSphere Liberty server, running on a virtual machine; the second component is a webapp (helloworld) running on a JBoss server, also running on a virtual machine. The following diagram depicts our sample application:
+In this sample, we assume a fictious application named 'legacyapp', comprised of two legacy components.  One component is a webapp running on a standalone WebSphere Liberty server, running on a virtual machine; the second component is a webapp (helloworld) running on a JBoss server, also running on a virtual machine. The following diagram depicts our sample application:
 
 ![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/overview.jpg)
 
