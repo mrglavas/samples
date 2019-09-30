@@ -20,6 +20,8 @@ To install and explore the sample, perform the following steps:
    1. [install kAppNav](https://github.com/kappnav/README).
    1. [install WebSphere Liberty](https://developer.ibm.com/wasdev/downloads/#asset/runtimes-wlp-webProfile8) and create default server.  
 
+      Note a Java JRE is required.  Install this separately.
+
       Create and start default server with these commands: 
 
       ```
@@ -28,8 +30,7 @@ To install and explore the sample, perform the following steps:
       ```
 
       Be sure to install the WebSphere Liberty server on a VM that is network accessible from the Kubernetes cluster running kAppNav. Note you can alternatively use [OpenLiberty](https://openliberty.io/). 
-
-      Note a Java JRE is required.  Install this separately. 
+ 
 
    1. [install JBoss EAP 7.2](https://developers.redhat.com/products/eap/download?sc_cid=701f2000000RmA9AAK&gclid=EAIaIQobChMIwaCv_6v35AIV0cDACh3ZUAIDEAAYASAAEgLzifD_BwE&gclsrc=aw.ds) and [install helloworld sample application](https://developers.redhat.com/products/eap/hello-world#fndtn-macos).
 
