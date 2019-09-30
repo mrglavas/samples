@@ -88,4 +88,11 @@ To install and explore the sample, perform the following steps:
 
 ![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/components.jpg)
 
+# Stopping Components 
+
+If you stop the WebSphere Liberty and JBoss servers, kAppNav updates the status to show the components are down:
+
+![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/stopped.jpg)
+
+
 
