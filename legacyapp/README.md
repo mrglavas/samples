@@ -81,5 +81,11 @@ To install and explore the sample, perform the following steps:
    ```
    
    Where hostname is the hostname of the VM on which you installed and started the JBoss server, hosting the helloworld sample.
+   
+# The legacyapp Sample as Viewed through kAppNav
+
+![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/applications.jpg)
+
+![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/components.jpg)
 
 
