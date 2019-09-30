@@ -33,6 +33,31 @@ To install and explore the sample, perform the following steps:
 
       $JBOSS_HOME/bin/standalone.sh 
 
+      Note also you must tweak the JBOSS standalone server to listen on all interfaces in order to be accessible for this sample. Make the following change to $JBOSS_HOME/standalone/configuration/standalone.xml: 
+
+      From: 
+      ```
+      <interfaces>
+        <interface name="management">
+            <inet-address value="${jboss.bind.address.management:127.0.0.1}"/>
+        </interface>
+        <interface name="public">
+            <inet-address value="${jboss.bind.address:127.0.0.1}"/>
+        </interface>
+      </interfaces>
+      ```
+
+      To: 
+      ```
+      <interfaces>
+        <interface name="management">
+            <any-address/>
+        </interface>
+        <interface name="public">
+            <any-address/>
+        </interface>
+      </interfaces>
+      ```
 
 1. install Liberty Standalone App 
 1. install JBoss App
