@@ -123,3 +123,18 @@ On the component view page, you can select pre-defined actions to perform in the
 ![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/jboss-metrics.jpg)
 
 
+# Uninstall
+
+Use uninstall.sh scripts to unstall from Kubernetes: 
+
+```
+cd kappnav/samples/legacyapp/liberty
+./uninstall.sh 
+```
+
+and 
+
+```
+cd ../jboss
+./uninstall.sh 
+```
