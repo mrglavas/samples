@@ -64,4 +64,22 @@ To install and explore the sample, perform the following steps:
       ```
 
 1. install Liberty Standalone App 
+
+   ```
+   git clone https://github.com/kappnav/samples.git
+   cd kappnav/samples/legacyapp/liberty
+   ./install.sh \<hostname\>
+   ```
+
+   Where hostname is the hostname of the VM on which you installed and started the WebSphere Liberty server. 
+
 1. install JBoss App
+
+   ```
+   cd ../jboss
+   ./install.sh \<hostname\>
+   ```
+   
+   Where hostname is the hostname of the VM on which you installed and started the JBoss server, hosting the helloworld sample.
+
+
