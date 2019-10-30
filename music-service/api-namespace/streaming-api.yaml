@@ -19,14 +19,14 @@ metadata:
   name: streaming-api
   labels:
     app: streaming-api
-    music.service: true
+    solution: music-service
 spec:
   replicas: 1
   template:
     metadata:
       labels:
         app: streaming-api
-        music.service: true
+        solution: music-service
         version: v1
     spec:
       containers:
@@ -41,7 +41,7 @@ metadata:
   name: streaming-api-service
   labels:
     app: streaming-api
-    music.service: true
+    solution: music-service
 spec:
   type: NodePort
   ports:
@@ -51,6 +51,21 @@ spec:
   selector:
     app: streaming-api
 ---
+# Define the Route
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: streaming-api-route
+  labels:
+    app: streaming-api
+    solution: music-service
+spec:
+  port:
+    targetPort: http
+  to:
+    kind: Service
+    name: streaming-api-service
+---
 # Define the Application
 apiVersion: app.k8s.io/v1beta1
 kind: Application
@@ -58,7 +73,7 @@ metadata:
   name: streaming-api
   labels:
     app: streaming-api
-    music.service: true
+    solution: music-service
 spec:
   selector:
     matchLabels:
@@ -70,3 +85,5 @@ spec:
       kind: Deployment
     - group: resources
       kind: Service
+    - group: resources
+      kind: Route

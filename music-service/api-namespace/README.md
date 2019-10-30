@@ -1,3 +1,7 @@
-`kubectl create namespace api-namespace`
+# API Namespace Applications
 
-`kubectl create -f streaming-api.yaml -n api-namespace`
+## Installation
+
+1. Create the api-namespace:  `kubectl create namespace api-namespace`
+1. Deploy the streaming-api application: `kubectl create -f streaming-api.yaml -n api-namespace`
+
