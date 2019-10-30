@@ -1,0 +1,13 @@
+apiVersion: app.k8s.io/v1beta1
+kind: Application
+metadata:
+  annotations:
+    kappnav.component.namespaces: ui-namespace, api-namespace
+  name: music-service
+  namespace: music-service
+spec:
+  componentKinds: [ ... ]
+  selector:
+    matchExpressions:
+    - { ... }
+    matchLabels: { ... }
