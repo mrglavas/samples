@@ -12,6 +12,6 @@ Sample application created for the 'music-service' application, created using [A
 
 ## Upload to Docker hub
 
-`docker tag kappnav-sample-web-ui <HUB-DOCKER-ID>/kappnav-sample-web-ui:latest`
-`docker push <HUB-DOCKER-ID>/kappnav-sample-web-ui:latest`
+1. `docker tag kappnav-sample-web-ui <HUB-DOCKER-ID>/kappnav-sample-web-ui:latest`
+1. `docker push <HUB-DOCKER-ID>/kappnav-sample-web-ui:latest`
 
