@@ -10,6 +10,11 @@ kappnav sample applications
 [Install instructions](/bookinfo)
 
 
+## Music Service
+
+[Install instructions](/music-service)
+
+
 ## Legacyapp
 
 [Install instructions](/legacyapp)
