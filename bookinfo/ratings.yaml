@@ -54,13 +54,13 @@ metadata:
   labels:
     app: ratings
     version: v1
-  annotations: { 
+  annotations: {
     kappnav.subkind: Node-js
   }
 spec:
   replicas: 1
   template:
-    metadata: 
+    metadata:
       labels:
         version: v1
     spec:

@@ -5,6 +5,11 @@ kappnav sample applications
 
 [Install instructions](https://github.com/kappnav/README/blob/master/README.md#install-sample-application)
 
+## BookInfo
+
+[Install instructions](/bookinfo)
+
+
 ## Legacyapp
 
-[Install instructions](https://github.com/kappnav/samples/tree/master/legacyapp)
+[Install instructions](/legacyapp)

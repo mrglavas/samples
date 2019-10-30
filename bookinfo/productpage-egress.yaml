@@ -25,7 +25,7 @@ kind: NetworkPolicy
 metadata:
   name: productpage-egress
   labels:
-    app: bookinfo  
+    app: bookinfo
 spec:
   egress:
   - to:

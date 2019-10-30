@@ -53,8 +53,8 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: reviews-v1
-  annotations: { 
-    kappnav.subkind: Liberty 
+  annotations: {
+    kappnav.subkind: Liberty
   }
 spec:
   replicas: 1
@@ -75,8 +75,8 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: reviews-v2
-  annotations: { 
-    kappnav.subkind: Liberty 
+  annotations: {
+    kappnav.subkind: Liberty
   }
 spec:
   replicas: 1
@@ -97,8 +97,8 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: reviews-v3
-  annotations: { 
-    kappnav.subkind: Liberty 
+  annotations: {
+    kappnav.subkind: Liberty
   }
 spec:
   replicas: 1

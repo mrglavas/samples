@@ -52,7 +52,7 @@ metadata:
   name: details-v1
   labels:
     app: details
-  annotations: { 
+  annotations: {
         kappnav.subkind: Ruby
       }
 spec:

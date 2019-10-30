@@ -47,14 +47,14 @@ spec:
   - port: 9080
     name: http
   selector:
-    app: productpage 
-  type: NodePort  
+    app: productpage
+  type: NodePort
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: productpage-v1
-  annotations: { 
+  annotations: {
     kappnav.subkind: Python
   }
 spec:
