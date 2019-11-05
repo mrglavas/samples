@@ -1,43 +1,45 @@
-# Legacy Component Sample
+# Installing a legacy component sample
 
-Applications can include legacy components as well as new, cloud native components.  This is common during application modernization scenarios, where parts of a monolith are transformed to, or replaced by, cloud native components. This [short video](https://www.youtube.com/watch?v=Air32LCcj0c&feature=youtu.be) demonstrates an actual example, based on the stocktrader application. 
-
-The sample in this repository demonstrates how you can represent and include legacy components as part of your application, as displayed by Kubernetes Application Navigator. 
+Applications can include legacy and cloud-native components. During application modernization scenarios, different parts of a monolithic application can either be transformed into cloud-native components or replaced by them.
+ 
 
 # Overview 
 
-In this sample, we assume a fictious application named 'legacyapp', comprised of two legacy components.  One component is a webapp running on a standalone WebSphere Liberty server, running on a virtual machine; the second component is a webapp (helloworld) running on a JBoss server, also running on a virtual machine. The following diagram depicts our sample application:
+The sample `legacyapp` application consists of two legacy components. The `webapp` component runs on a stand-alone WebSphere Liberty server that runs on a virtual machine. The `helloworld` component runs on a JBoss server that also runs on a virtual machine.
 
 ![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/overview.jpg)
 
-Our sample application, 'legacyapp', shows depicts an application comprised of only legacy components.  This is for illustrative purposes only. In typical circumstances, an application undergoing modernization is more likely to be comprised of by legacy (un-modernized) and cloud native (modernized) components.  The Application custom resource definition used by kAppNav fully supports this. 
+  An application that is modernized usually contains legacy and cloud-native components. For more information, see the [PRISM demonstration](https://www.youtube.com/watch?v=Air32LCcj0c&feature=youtu.be).
 
-# Install 
+# Prerequisites
 
-To install and explore the sample, perform the following steps: 
 
-1. pre-reqs 
-   1. [install kAppNav](https://github.com/kappnav/README).
-   1. [install WebSphere Liberty](https://developer.ibm.com/wasdev/downloads/#asset/runtimes-wlp-webProfile8) and create default server.  
 
-      Note a Java JRE is required.  Install this separately.
+   1. [Install kAppNav](https://github.com/kappnav/README).
+   1. [Install WebSphere Liberty](https://developer.ibm.com/wasdev/downloads/#asset/runtimes-wlp-webProfile8) to create the default server.  
 
-      Create and start default server with these commands: 
+      > **Important**: You must have a Java Runtime Environment that is installed separately.
+
+      1. Create and start the default server with the following commands: 
 
       ```
       $LIBERTY_HOME/bin/server create
       $LIBERTY_HOME/bin/server start 
       ```
 
-      Be sure to install the WebSphere Liberty server on a VM that is network accessible from the Kubernetes cluster running kAppNav. Note you can alternatively use [OpenLiberty](https://openliberty.io/). 
+      2. Install the WebSphere Liberty server on a VM that is network accessible with the Kubernetes cluster that runs Kubernetes Application Navigator.
+          * You can also use [OpenLiberty](https://openliberty.io/).
  
 
-   1. [install JBoss EAP 7.2](https://developers.redhat.com/products/eap/download?sc_cid=701f2000000RmA9AAK&gclid=EAIaIQobChMIwaCv_6v35AIV0cDACh3ZUAIDEAAYASAAEgLzifD_BwE&gclsrc=aw.ds) and [install helloworld sample application](https://developers.redhat.com/products/eap/hello-world#fndtn-macos).
+   1. [Install JBoss EAP 7.2](https://developers.redhat.com/products/eap/download?sc_cid=701f2000000RmA9AAK&gclid=EAIaIQobChMIwaCv_6v35AIV0cDACh3ZUAIDEAAYASAAEgLzifD_BwE&gclsrc=aw.ds).
 
-      Note a Java JRE is required.  Install this separately.
+      > **Important**: You must have a Java Runtime Environment that is installed separately.
 
-      Be sure to install the JBoss server on a VM that is network accessible from the Kubernetes cluster running kAppNav. Also be sure to use standalone server to run the helloworld sample. Note you must tweak the JBOSS standalone server to listen on all interfaces in order to be accessible for this sample. Make the following change to $JBOSS_HOME/standalone/configuration/standalone.xml: 
+      * Install the JBoss server on a VM that is network accessible from the Kubernetes cluster that runs Kubernetes Application Navigator. 
+      > **Important**: You must configure the JBOSS stand-alone server to listen on all interface to be accessible for the sample. 
 
+      * Make the following change to the `$JBOSS_HOME/standalone/configuration/standalone.xml` file: 
+      
       From: 
       ```
       <interfaces>
@@ -62,13 +64,18 @@ To install and explore the sample, perform the following steps:
       </interfaces>
       ```
 
-      Finally, start the standlone server using this command: 
+       Use the following command to start the stand-alone server: 
 
       ```
       $JBOSS_HOME/bin/standalone.sh 
       ```
+    1. [Install a helloworld sample application](https://developers.redhat.com/products/eap/hello-world#fndtn-macos).
 
-1. install Liberty Standalone App 
+       * Use a stand-alone WebSphere Liberty server to run the `helloworld` sample.
+
+# Installing the sample application
+
+1. Install a Liberty stand-alone application
 
    ```
    git clone https://github.com/kappnav/samples.git
@@ -76,64 +83,26 @@ To install and explore the sample, perform the following steps:
    ./install.sh \<hostname\>
    ```
 
-   Where hostname is the hostname of the VM on which you installed and started the WebSphere Liberty server. 
+   Hostname is the hostname of the VM that you installed and started the WebSphere Liberty server with.
 
-1. install JBoss App
+1. Install a JBoss application.
 
    ```
    cd ../jboss
    ./install.sh \<hostname\>
    ```
    
-   Where hostname is the hostname of the VM on which you installed and started the JBoss server, hosting the helloworld sample.
+   Hostname is the hostname of the VM that you installed and started the JBoss server with and hosts the `helloworld` sample.
    
-# The legacyapp Sample as Viewed through kAppNav
 
-![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/applications.jpg)
+# Uninstalling the sample application
 
-![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/components.jpg)
-
-# Stopping Components 
-
-If you stop the WebSphere Liberty and JBoss servers, kAppNav updates the status to show the components are down:
-
-![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/stopped.jpg)
-
-# Selecting Actions 
-
-On the component view page, you can select pre-defined actions to perform in the context of the selected component: 
-
-## Liberty Standalone App Action - View Home Page 
-
-![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/liberty-action.jpg)
-
-![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/liberty-home.jpg)
-
-## JBoss App Actions 
-
-### View Application Config 
-
-![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/jboss-view-config.jpg)
-
-![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/jboss-config.jpg)
-
-### View Server Metrics 
-
-![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/jboss-view-metrics.jpg)
-
-![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/jboss-metrics.jpg)
-
-
-# Uninstall
-
-Use uninstall.sh scripts to unstall from Kubernetes: 
+Use the following `uninstall.sh` scripts to uninstall the sample application with Kubernetes: 
 
 ```
 cd kappnav/samples/legacyapp/liberty
 ./uninstall.sh 
 ```
-
-and 
 
 ```
 cd ../jboss
