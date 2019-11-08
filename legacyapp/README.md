@@ -71,7 +71,7 @@ The sample `legacyapp` application consists of two legacy components. The `webap
       ```
     1. [Install a helloworld sample application](https://developers.redhat.com/products/eap/hello-world#fndtn-macos).
 
-       * Use a stand-alone WebSphere Liberty server to run the `helloworld` sample.
+       * Use a stand-alone WebSphere Liberty server to run the `helloworld` sample application.
 
 # Installing the sample application
 
@@ -94,6 +94,41 @@ The sample `legacyapp` application consists of two legacy components. The `webap
    
    Hostname is the hostname of the VM that you installed and started the JBoss server with and hosts the `helloworld` sample.
    
+ # The legacyapp sample as viewed through Kubernetes Application Navigator.
+
+![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/applications.jpg)
+
+![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/components.jpg)
+
+# Stopping components 
+
+If you stop the WebSphere Liberty and JBoss servers, Kubernetes Application Navigator updates the status to show that the components are down:
+
+![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/stopped.jpg)
+
+# Selecting actions 
+
+On the component view page, you can select pre-defined actions to perform in the context of the selected component: 
+
+## Liberty stand-alone application action - View home page 
+
+![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/liberty-action.jpg)
+
+![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/liberty-home.jpg)
+
+## JBoss application actions
+
+### Viewing the application configuration
+
+![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/jboss-view-config.jpg)
+
+![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/jboss-config.jpg)
+
+### Viewing the server metrics 
+
+![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/jboss-view-metrics.jpg)
+
+![overview](https://github.com/kappnav/samples/blob/master/legacyapp/images/jboss-metrics.jpg)
 
 # Uninstalling the sample application
 
