@@ -19,6 +19,8 @@ metadata:
   name: portfolio
   labels:
     solution: stock-trader
+  annotations:
+    kappnav.subkind: Liberty
 spec:
   replicas: 1
   template:
