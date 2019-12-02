@@ -1,7 +1,8 @@
 # Installing a legacy component sample
 
-Applications can include legacy and cloud-native components. During application modernization scenarios, different parts of a monolithic application can either be transformed into cloud-native components or replaced by them.
- 
+Applications can include legacy components as well as new, cloud native components.  This is common during application modernization scenarios, where parts of a monolith are transformed to, or replaced by, cloud native components. This [short video](https://www.youtube.com/watch?v=h833ZN8KQy0&feature=youtu.be) demonstrates an actual example, based on the stocktrader application. 
+
+The sample in this repository demonstrates how you can represent and include legacy components as part of your application, as displayed by Kubernetes Application Navigator. 
 
 # Overview 
 
