@@ -1,4 +1,6 @@
-# Installing a legacy component sample
+# Installing the legacy component sample
+
+**About Legacy Components**
 
 Applications can include legacy components as well as new, cloud native components.  This is common during application modernization scenarios, where parts of a monolith are transformed to, or replaced by, cloud native components. This [short video](https://www.youtube.com/watch?v=h833ZN8KQy0&feature=youtu.be) demonstrates an actual example, based on the stocktrader application. 
 
