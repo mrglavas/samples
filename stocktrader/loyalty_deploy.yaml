@@ -19,6 +19,7 @@ metadata:
   name: loyalty-level
   labels: 
     solution: stock-trader
+    kappnav.action.metrics.mp20: "true"
   annotations:
     kappnav.subkind: Liberty
 spec:
