@@ -23,7 +23,7 @@ spec:
     matchLabels:
      app: "legacyapp"
   componentKinds:
-    - group: apps
+    - group: kappnav.io
       kind: Liberty-SA-App
-    - group: apps
+    - group: kappnav.io
       kind: JBoss-App

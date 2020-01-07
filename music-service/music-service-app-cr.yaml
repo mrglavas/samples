@@ -9,13 +9,13 @@ metadata:
     solution: music-service
 spec:
   componentKinds:
-  - group: resources
+  - group: core
     kind: Pod
-  - group: resources
+  - group: core
     kind: Deployment
-  - group: resources
+  - group: core
     kind: Service
-  - group: resources
+  - group: openshift.io
     kind: Route
   selector:
     matchLabels:
