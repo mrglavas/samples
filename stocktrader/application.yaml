@@ -24,7 +24,7 @@ spec:
     matchLabels:
      solution: "stock-trader"
   componentKinds:
-    - group: deployments
+    - group: core
       kind: Deployment
-    - group: service
+    - group: core
       kind: Service

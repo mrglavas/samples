@@ -26,7 +26,7 @@ spec:
        operator: In
        values: [productpage, details, ratings, reviews, bookinfo]
   componentKinds:
-    - group: apps
+    - group: core
       kind: Application
-    - group: apps
+    - group: core
       kind: Ingress
