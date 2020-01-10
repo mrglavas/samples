@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: loyalty-level
-        image: docker.io/kappnav/sample-liberty:latest
+        image: kappnav/sample-liberty:latest
         imagePullPolicy: Always
 ---
 #Deploy the service
