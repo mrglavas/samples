@@ -85,7 +85,6 @@ metadata:
   labels:
     k8s-app: loyalty-level-monitor
   name: loyalty-level-monitor
-  namespace: stocktrader
 spec:
   endpoints:
     - interval: 30s
@@ -95,7 +94,7 @@ spec:
       port: http
   namespaceSelector:
     matchNames:
-      - stocktrader
+      - stock-trader
   selector:
     matchLabels:
       app: loyalty-level
