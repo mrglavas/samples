@@ -25,9 +25,7 @@ data:
       { 
         "name":"metrics", 
         "text":"View server metrics", 
-        "text.nls":"View server metrics",
-        "description":"View server metrics in console",  
-        "description.nls":"View server metrics in console", 
+        "description":"View server metrics in console",   
         "url-pattern":"http://${resource.$.metadata.annotations.host}:${resource.$.metadata.annotations.console-port}/console/index.html#runtime;path=${resource.$.metadata.annotations.server}-server-column~${resource.$.metadata.annotations.server}-host-${resource.$.metadata.annotations.node}!rss~server-runtime-status",
         "open-window": "tab", 
         "menu-item": "true"

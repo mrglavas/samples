@@ -24,9 +24,7 @@ data:
       { 
         "name":"home", 
         "text":"View home page", 
-        "text.nls":"View home page",
         "description":"View home page",  
-        "description.nls":"View home page", 
         "url-pattern":"http://${resource.$.metadata.annotations.host}:${resource.$.metadata.annotations.port}",
         "open-window": "tab", 
         "menu-item": "true"

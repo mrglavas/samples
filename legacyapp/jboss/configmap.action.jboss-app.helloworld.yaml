@@ -24,9 +24,7 @@ data:
       { 
         "name":"config", 
         "text":"View app detail", 
-        "text.nls":"View app detail",
         "description":"View app detail in console",  
-        "description.nls":"View app detail in console", 
         "url-pattern":"http://${resource.$.metadata.annotations.host}:${resource.$.metadata.annotations.console-port}/console/index.html#deployments;path=deployment~dply-helloworldwar",
         "open-window": "tab", 
         "menu-item": "true"
