@@ -1,4 +1,4 @@
-# Copyright 2019 IBM Corporation
+# Copyright 2019, 2020 IBM Corporation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@
 #    - all pods in istio-system ( required)
 #    - all pods in the ratings service
 ####################################
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
   name: reviews-egress
