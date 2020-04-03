@@ -52,6 +52,11 @@ metadata:
     source.image.appsody.dev/contextDir: foobar
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: loyalty-level
+      appview: stock-trader
+      version: v1
   template:
     metadata:
       labels:

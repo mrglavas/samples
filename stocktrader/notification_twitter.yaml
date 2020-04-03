@@ -23,6 +23,10 @@ metadata:
     kappnav.subkind: Liberty
 spec:
   replicas: 1
+    selector:
+    matchLabels:
+      app: notification
+      version: twitter
   template:
     metadata:
       labels:

@@ -23,6 +23,9 @@ metadata:
     kappnav.subkind: Liberty
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: portfolio
   template:
     metadata:
       labels:
