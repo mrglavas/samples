@@ -3,6 +3,8 @@ kind: ConfigMap
 metadata:
   name: stock-trader.actions.deployment-liberty.loyalty-level
   namespace: stock-trader
+  labels: 
+    kappnav.io/map-type: action
 data:
   url-actions: |
     [
