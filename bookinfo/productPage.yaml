@@ -59,6 +59,10 @@ metadata:
   }
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: productpage
+      version: v1
   template:
     metadata:
       labels:

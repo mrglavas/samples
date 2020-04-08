@@ -58,6 +58,10 @@ metadata:
   }
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: reviews
+      version: v1
   template:
     metadata:
       labels:
@@ -80,6 +84,10 @@ metadata:
   }
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: reviews
+      version: v2
   template:
     metadata:
       labels:
@@ -102,6 +110,10 @@ metadata:
   }
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: reviews
+      version: v3
   template:
     metadata:
       labels:
