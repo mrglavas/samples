@@ -90,6 +90,7 @@ metadata:
   labels:
     k8s-app: loyalty-level-monitor
   name: loyalty-level-monitor
+  namespace: stock-trader
 spec:
   endpoints:
     - interval: 30s
