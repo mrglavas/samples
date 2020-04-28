@@ -68,5 +68,5 @@ spec:
       serviceAccountName: liberty-controller
       containers:
         - name: liberty-controller
-          image: kappnav/sample-liberty-controller:latest
+          image: mrglavas/liberty-controller:latest
           imagePullPolicy: Always

@@ -22,13 +22,27 @@ data:
   url-actions: |
     [
       { 
-        "name":"home", 
-        "text":"View home page", 
-        "text.nls":"View home page",
-        "description":"View home page",  
-        "description.nls":"View home page", 
+        "name":"home",
+        "text":"View home page",
+        "description":"View home page",
         "url-pattern":"http://${resource.$.metadata.annotations.host}:${resource.$.metadata.annotations.port}",
-        "open-window": "tab", 
+        "open-window": "tab",
+        "menu-item": "true"
+      },
+      { 
+        "name":"consolelog",
+        "text":"View console log",
+        "description":"View console log",
+        "url-pattern":"http://${resource.$.metadata.annotations.host}:${resource.$.metadata.annotations.port}/liberty-sample/logging?name=console",
+        "open-window": "tab",
+        "menu-item": "true"
+      },
+      { 
+        "name":"messageslog",
+        "text":"View message log",
+        "description":"View message log",
+        "url-pattern":"http://${resource.$.metadata.annotations.host}:${resource.$.metadata.annotations.port}/liberty-sample/logging?name=messages",
+        "open-window": "tab",
         "menu-item": "true"
       }
     ]

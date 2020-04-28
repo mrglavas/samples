@@ -23,6 +23,6 @@ metadata:
   annotations:
     protocall: "http"
     host: "HOSTNAME"
-    port: "9080"
+    port: "PORT"
     kappnav.platform.kind: "VM"
     kappnav.platform.name: "HOSTNAME"

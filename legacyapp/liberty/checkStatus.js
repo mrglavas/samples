@@ -31,7 +31,7 @@ function getStatus(liberty, callback) {
     port: port,
     path: '/',
     method: 'GET',
-    timeout: 1000
+    timeout: 10000
   }
 
   console.warn("Test Liberty connection on "+host+":"+port); 
