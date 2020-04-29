@@ -13,10 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ###############################################################################
-kubectl apply -f liberty-sa-app-CRD.yaml 
-kubectl create namespace legacyapp
-kubectl apply -f application.yaml -n legacyapp
-kubectl apply -f configmap.action.liberty-sa-app.yaml -n kappnav
-kubectl apply -f configmap.status-mapping.liberty-sa-app.yaml -n kappnav
-kubectl create namespace liberty-controller
-kubectl apply -f liberty-controller.yaml -n liberty-controller
+
+apiVersion: kappnav.io/v1beta1
+kind: Liberty-SA-App
+metadata:
+  name: "SERVERNAME"
+  labels:
+    app: "legacyapp"
+  annotations:
+    protocall: "http"
+    host: "HOSTNAME"
+    port: "PORT"
+    kappnav.platform.kind: "VM"
+    kappnav.platform.name: "HOSTNAME"
