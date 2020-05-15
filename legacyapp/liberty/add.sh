@@ -13,13 +13,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ###############################################################################
-# syntax:  install.sh <servername> <hostname> <port>
+# syntax:  install.sh <servername> <hostname> <user> <password> <libertydir> <libertyservername> <port>
 # hostname cannot be localhost
 # hostname must be dot-qualified hostname - e.g. myhost.com
 # port default value is 9080
 servername=$1
 hostname=$2
-port=$3
+user=$3
+password=$4
+libertydir=$5
+libertyservername=$6
+port=$7
 
 if [ x$servername == x ]; then
 	echo Must specify servername
@@ -31,9 +35,29 @@ if [ x$hostname == x ]; then
 	exit 1 
 fi
 
+if [ x$user == x ]; then
+	echo Must specify user
+	exit 1 
+fi
+
+if [ x$password == x ]; then
+	echo Must specify password
+	exit 1 
+fi
+
+if [ x$libertydir == x ]; then
+	echo Must specify libertydir
+	exit 1 
+fi
+
+if [ x$libertyservername == x ]; then
+	echo Must specify libertyservername
+	exit 1 
+fi
+
 if [ x$port == x ]; then
 	echo Port defaulted to 9080
 	port="9080"
 fi
 
-cat webapp.yaml | sed "s|SERVERNAME|$servername|" | sed "s|HOSTNAME|$hostname|" | sed "s|PORT|$port|" | kubectl apply -f - -n legacyapp
+cat webapp.yaml | sed "s|SERVERNAME|$servername|" | sed "s|HOSTNAME|$hostname|" | sed "s|USER|$user|" | sed "s|PASSWORD|$password|" | sed "s|LIBERTYDIR|$libertydir|" | sed "s|LIBERTYSERVERNAME|$libertyservername|" | sed "s|PORT|$port|" | kubectl apply -f - -n legacyapp
