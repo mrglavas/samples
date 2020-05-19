@@ -27,6 +27,6 @@ metadata:
     user: "USER"
     password: "PASSWORD"
     libertydir: "LIBERTYDIR"
-    libertyservername: "LIBERTYSERVERNAME"
+    servername: "LIBERTYSERVERNAME"
     kappnav.platform.kind: "VM"
     kappnav.platform.name: "HOSTNAME"
