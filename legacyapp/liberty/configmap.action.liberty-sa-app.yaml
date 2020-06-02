@@ -46,3 +46,20 @@ data:
         "menu-item": "true"
       }
     ]
+  cmd-actions: |
+    [
+      {
+        "name": "startserver",
+        "text": "Start server",
+        "description": "Start server",
+        "image": "mrglavas/liberty-command-actions:latest",
+        "cmd-pattern": "sh /scripts/startLiberty.sh ${resource.$.metadata.annotations.host} ${resource.$.metadata.annotations.user} ${resource.$.metadata.annotations.password} ${resource.$.metadata.annotations.libertydir} ${resource.$.metadata.annotations.servername}"
+      },
+      {
+        "name": "stopserver",
+        "text": "Stop server",
+        "description": "Stop server",
+        "image": "mrglavas/liberty-command-actions:latest",
+        "cmd-pattern": "sh /scripts/stopLiberty.sh ${resource.$.metadata.annotations.host} ${resource.$.metadata.annotations.user} ${resource.$.metadata.annotations.password} ${resource.$.metadata.annotations.libertydir} ${resource.$.metadata.annotations.servername}"
+      }
+    ]

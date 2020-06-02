@@ -1,5 +1,5 @@
 ###############################################################################
-# Copyright 2019 IBM Corporation
+# Copyright 2020 IBM Corporation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,19 +14,12 @@
 # limitations under the License.
 ###############################################################################
 
-apiVersion: kappnav.io/v1beta1
-kind: Liberty-SA-App
-metadata:
-  name: "SERVERNAME"
-  labels:
-    app: "legacyapp"
-  annotations:
-    protocall: "http"
-    host: "HOSTNAME"
-    port: "PORT"
-    user: "USER"
-    password: "PASSWORD"
-    libertydir: "LIBERTYDIR"
-    servername: "LIBERTYSERVERNAME"
-    kappnav.platform.kind: "VM"
-    kappnav.platform.name: "HOSTNAME"
+echo Stopping Liberty
+
+host=$1
+user=$2
+password=$3
+libertydir=$4
+servername=$5
+
+sshpass -p ''$password'' ssh -o StrictHostKeyChecking=no $user@$host ''sh $libertydir/bin/server stop $servername''
