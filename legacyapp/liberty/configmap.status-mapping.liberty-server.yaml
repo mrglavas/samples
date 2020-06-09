@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: kappnav.status-mapping.liberty-sa-app
+  name: kappnav.status-mapping.liberty-server
   namespace: kappnav
 data:
   algorithm: "function getStatus(status) { 

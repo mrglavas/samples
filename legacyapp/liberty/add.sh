@@ -60,4 +60,4 @@ if [ x$port == x ]; then
 	port="9080"
 fi
 
-cat webapp.yaml | sed "s|SERVERNAME|$servername|" | sed "s|HOSTNAME|$hostname|" | sed "s|USER|$user|" | sed "s|PASSWORD|$password|" | sed "s|LIBERTYDIR|$libertydir|" | sed "s|LIBERTYSERVERNAME|$libertyservername|" | sed "s|PORT|$port|" | kubectl apply -f - -n legacyapp
+cat liberty-server.yaml | sed "s|SERVERNAME|$servername|" | sed "s|HOSTNAME|$hostname|" | sed "s|USER|$user|" | sed "s|PASSWORD|$password|" | sed "s|LIBERTYDIR|$libertydir|" | sed "s|LIBERTYSERVERNAME|$libertyservername|" | sed "s|PORT|$port|" | kubectl apply -f - -n legacyapp

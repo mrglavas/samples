@@ -20,15 +20,15 @@ if [ x$LIBERTY_CONTROLLER == 'x' ]; then
 fi	
 while true 
 do
-    kubectl get liberty-sa-apps --all-namespaces | while read l; do 
+    kubectl get liberty-servers --all-namespaces | while read l; do 
         namespace=$(echo $l | awk '{ print $1 }')
         name=$(echo $l | awk '{ print $2 }')
         if [ $namespace != 'NAMESPACE' ]; then
-            echo check status for liberty-sa-app $name in namespace $namespace 
-            kubectl get liberty-sa-app $name -n $namespace -o json | node $LIBERTY_CONTROLLER/checkStatus.js | kubectl apply -f -
+            echo check status for liberty-server $name in namespace $namespace 
+            kubectl get liberty-server $name -n $namespace -o json | node $LIBERTY_CONTROLLER/checkStatus.js | kubectl apply -f -
             rc=$?
             if [ $rc != 0 ]; then
-                echo Could not update liberty-sa-app $name in namespace $namespace - rc=$rc 
+                echo Could not update liberty-server $name in namespace $namespace - rc=$rc 
             fi
         fi
     done

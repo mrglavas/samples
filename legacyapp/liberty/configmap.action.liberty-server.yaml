@@ -17,7 +17,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: kappnav.actions.liberty-sa-app
+  name: kappnav.actions.liberty-server
 data:
   url-actions: |
     [

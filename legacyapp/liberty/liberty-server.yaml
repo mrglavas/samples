@@ -15,7 +15,7 @@
 ###############################################################################
 
 apiVersion: kappnav.io/v1beta1
-kind: Liberty-SA-App
+kind: Liberty-Server
 metadata:
   name: "SERVERNAME"
   labels:

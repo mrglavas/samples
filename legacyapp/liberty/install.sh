@@ -13,10 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ###############################################################################
-kubectl apply -f liberty-sa-app-CRD.yaml 
+kubectl apply -f liberty-server-CRD.yaml 
 kubectl create namespace legacyapp
 kubectl apply -f application.yaml -n legacyapp
-kubectl apply -f configmap.action.liberty-sa-app.yaml -n kappnav
-kubectl apply -f configmap.status-mapping.liberty-sa-app.yaml -n kappnav
+kubectl apply -f configmap.action.liberty-server.yaml -n kappnav
+kubectl apply -f configmap.status-mapping.liberty-server.yaml -n kappnav
 kubectl create namespace liberty-controller
 kubectl apply -f liberty-controller.yaml -n liberty-controller
