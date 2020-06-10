@@ -1,5 +1,5 @@
 ###############################################################################
-# Copyright 2019 IBM Corporation
+# Copyright 2020 IBM Corporation
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,11 +14,35 @@
 # limitations under the License.
 ###############################################################################
 
-kubectl apply -f liberty-server-CRD.yaml
-kubectl apply -f liberty-app-CRD.yaml
-kubectl create namespace legacyapp
-kubectl apply -f application.yaml -n legacyapp
-kubectl apply -f configmap.action.liberty-server.yaml -n kappnav
-kubectl apply -f configmap.status-mapping.liberty-server.yaml -n kappnav
-kubectl create namespace liberty-controller
-kubectl apply -f liberty-controller.yaml -n liberty-controller
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  name: liberty-apps.kappnav.io
+spec:
+  group: kappnav.io
+  names:
+    kind: Liberty-App
+    plural: liberty-apps
+  scope: Namespaced
+  validation:
+    openAPIV3Schema:
+      properties:
+        apiVersion:
+          type: string
+        kind:
+          type: string
+        metadata:
+          type: object
+        status:
+          properties:
+            connection:
+              type: string
+      type: object
+  version: v1beta1
+status:
+  acceptedNames:
+    kind: "liberty-app"
+    plural: "liberty-apps"
+  conditions: []
+  storedVersions: []

@@ -20,4 +20,5 @@ kubectl delete -f application.yaml -n legacyapp
 kubectl delete namespace legacyapp 
 kubectl delete -f configmap.action.liberty-server.yaml -n kappnav
 kubectl delete -f configmap.status-mapping.liberty-server.yaml -n kappnav
+kubectl delete -f liberty-app-CRD.yaml
 kubectl delete -f liberty-server-CRD.yaml

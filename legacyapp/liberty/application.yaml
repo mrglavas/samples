@@ -25,3 +25,5 @@ spec:
   componentKinds:
     - group: kappnav.io
       kind: Liberty-Server
+    - group: kappnav.io
+      kind: Liberty-App
